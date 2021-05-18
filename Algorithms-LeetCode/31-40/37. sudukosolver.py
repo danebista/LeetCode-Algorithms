@@ -14,7 +14,8 @@ class Solution:
                 
                 if (self.solve(board)):
                     return True
-                board[position[0]][position[1]]='.'      
+                board[position[0]][position[1]]='.'  
+        return False    
     
     def findEmpty(self, board):
         for i in range(9):
