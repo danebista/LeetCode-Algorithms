@@ -5,17 +5,16 @@ class Solution:
 
         
         total=0
-        for i in range(len(s)):
-            if length<0: return total
-            
+        while(length>=0):
             curr=diction[s[length]]
-           
-            if length-1>=0 and diction[s[length-1]]<curr:
-           
-                total=total+(curr+diction[s[length-1]]-2*diction[s[length-1]])
-          
+            
+            if length-1>=0 and diction[s[length-1]]< curr:
+                
+                total+=curr+diction[s[length-1]]-2*diction[s[length-1]]
                 length-=1
+            
             else:
-                total=total+curr
+                total+=curr
+            
             length-=1
         return total
