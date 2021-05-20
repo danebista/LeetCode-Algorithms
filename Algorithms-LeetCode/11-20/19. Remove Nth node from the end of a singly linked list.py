@@ -5,35 +5,22 @@
 #         self.next = next
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-        l3=head  
-        l=self.findLengthOfLinkedList(l3)
-        if l==1 and n==1:
-            head.next= None
-            head.val= ''
-            return head
-        
+        templist=head
+        l=self.findLengthOfLinkedList(templist)
         m=l-n-1
-      
+        
+        iteratorlist=head
         if m<=0 and l==n:
             head=head.next
             return head
-        elif m<=0 and l!=n:
-            head.next=head.next.next
-            return head
         
-        l4=head
         for i in range(m):
-            l4=l4.next
+            iteratorlist=iteratorlist.next
         
-        l4.next=l4.next.next
+        iteratorlist.next = iteratorlist.next.next
         
         return head
-    
-    
-    
-    
-    
-    
+            
     def findLengthOfLinkedList(self, lists:ListNode)->int:
         c=0
         while (lists):
