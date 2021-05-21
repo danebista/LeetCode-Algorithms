@@ -11,4 +11,4 @@ class Solution:
             else:
                 return mid
         return l
-        
+    
