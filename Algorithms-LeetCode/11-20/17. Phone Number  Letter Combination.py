@@ -1,23 +1,22 @@
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
         res=[]
-        if len(digits)==0: return res
-        n=len(digits)
-        mapping=['0','1','abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
         
-        def letterCombiner(curr, index):
+        if len(digits)==0 : return []
         
-            if index==n:
-                res.append(curr)
+        mapping=[0,1,'abc','def','ghi','jkl','mno','pqrs','tuv','wxyz']
+   
+        def findLetter(current, index):
+            if index == len(digits):
+                res.append(current)
                 return;
             
-            letters= mapping[int(digits[index])]
-       
-            for i in range(len(letters)):
-              
-                letterCombiner(curr+letters[i],index+1)
+            values = mapping[int(digits[index])]
+            for i in values:
+                findLetter(current+i, index+1)
         
-        letterCombiner('',0)
         
+        
+        findLetter('', 0)
         
         return res
