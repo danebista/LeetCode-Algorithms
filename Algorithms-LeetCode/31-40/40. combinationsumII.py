@@ -1,24 +1,27 @@
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
         ans=[]
-        
-        def recursiveCombo(index, t, nL):
-            if (t == 0):
-                ans.append(list(nL))
-                return
+        def recurser(index,targets, newList):
+            if targets==0:
+                ans.append(newList.copy())
+            
             
             for i in range(index, len(candidates)):
-                if i>index and candidates[i]==candidates[i-1]: 
+                if i>index and candidates[i]==candidates[i-1]:
                     continue
                 
-                if (candidates[i]> t):
+                if candidates[i]>targets:
                     break
+                    
+                newList.append(candidates[i])
                 
-                nL.append(candidates[i])
-                recursiveCombo(i+1, t-candidates[i], nL)
-                nL.pop()
+                recurser(i+1, targets-candidates[i], newList)
+                
+                newList.pop()
             
-        
+            
+            
         candidates.sort()
-        recursiveCombo(0,target, [])
+        recurser(0, target, [])
+        
         return ans
