@@ -19,3 +19,4 @@ class Solution:
             farthest =max(farthest, i + nums[i])
     
         return True
+        

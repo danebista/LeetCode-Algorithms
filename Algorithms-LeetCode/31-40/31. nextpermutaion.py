@@ -20,3 +20,4 @@ class Solution:
         nums[pointer+1:]= reversed(nums[pointer+1:])
         
         return nums
+        

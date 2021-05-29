@@ -38,3 +38,4 @@ class Solution:
             list1=list1.next
         
         return s1
+        

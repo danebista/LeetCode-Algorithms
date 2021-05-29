@@ -9,7 +9,7 @@ You can return the answer in any order.
 
 """
  
-
+"""
 Example 1:
 
 Input: nums = [2,7,11,15], target = 9
@@ -25,3 +25,4 @@ class Solution:
             if (target-nums[i]) in dictionaryy:
                 return [dictionaryy[target-nums[i]], i]
             dictionaryy[nums[i]]= i
+            

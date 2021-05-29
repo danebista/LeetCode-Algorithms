@@ -11,12 +11,13 @@ class Solution:
         current_end = nums[0]
         
         for i in range(1, n):
-            print('i: {}'.format(i))
+           
             if i == n-1:
                 return jumpsMade
-            
+             farthest =max(farthest, i + nums[i])
             if i == current_end:
                 jumpsMade += 1
                 current_end = farthest
         
         return jumpsMade
+

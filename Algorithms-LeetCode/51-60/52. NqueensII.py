@@ -42,3 +42,4 @@ class Solution:
             return 
         solver(0)
         return len(ans)
+        

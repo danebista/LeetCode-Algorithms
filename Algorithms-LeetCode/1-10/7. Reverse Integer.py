@@ -21,3 +21,4 @@ class Solution:
             return 0
         else:
             return reverse * delta
+            
