@@ -3,14 +3,13 @@ class Solution:
         if not nums:
             return None
         
-        l,r=0,0
+        r=0
         
-        while l < len(nums):
+        for l in range(len(nums)):
             if nums[l]!=val:
-                print(l)
                 nums[r]=nums[l]
                 r+=1
-            
-            l+=1
+        
         return r
+        
         
