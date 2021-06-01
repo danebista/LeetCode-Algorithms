@@ -28,3 +28,4 @@ class Solution:
             lists=lists.next
             
         return c
+        

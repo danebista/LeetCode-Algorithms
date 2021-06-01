@@ -21,3 +21,4 @@ class Solution:
             dummy=p
             
         return curr.next
+        

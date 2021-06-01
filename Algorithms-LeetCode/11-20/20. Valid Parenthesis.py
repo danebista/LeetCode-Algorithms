@@ -22,3 +22,4 @@ class Solution:
                 return False
             
         return len(res)==0
+        

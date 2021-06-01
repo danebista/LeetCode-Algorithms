@@ -22,3 +22,4 @@ class Solution:
                 return cache[(xe,num)]
             
         return powAf(x,n)
+        

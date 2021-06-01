@@ -14,7 +14,9 @@ class Solution:
            
             if i == n-1:
                 return jumpsMade
-             farthest =max(farthest, i + nums[i])
+
+            farthest =max(farthest, i + nums[i])
+            
             if i == current_end:
                 jumpsMade += 1
                 current_end = farthest
