@@ -29,3 +29,4 @@ class Solution:
         result.append(' '.join(curr)+ ' ' * (maxWidth-num_of_letters-len(curr)+1))
                 
         return result
+        
