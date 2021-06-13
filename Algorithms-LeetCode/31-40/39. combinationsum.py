@@ -1,28 +1,21 @@
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        ans=[]
+        result=[]
         
-        def recurserCombo(index, targets, newList):
-           
-         
-            if (index==len(candidates)):
-                if (targets==0):
-                    
-                    ans.append(list(newList))
+        def recurser(index, targets, newList):
+            if index == len(candidates):
+                if targets == 0:
+                    result.append(newList.copy())
                 return
-            
-            if targets==0:
-                ans.append(list(newList))
+            if targets == 0:
+                result.append(newList.copy())
                 return
                 
-            if (candidates[index]<=targets):
-                    newList.append(candidates[index])
-                    recurserCombo(index, targets-candidates[index], newList)
-                    newList.pop()
-            
-            recurserCombo(index+1, targets, newList)
-            
-        recurserCombo(0, target, [])
+            if candidates[index] <=targets:
+                newList.append(candidates[index])
+                recurser(index, targets-candidates[index], newList)
+                newList.pop()
+            recurser(index+1, targets, newList)
         
-        return ans
-                     
+        recurser(0, target, [])
+        return result
